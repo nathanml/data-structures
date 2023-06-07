@@ -1,12 +1,12 @@
 public class Stack{
     private int size;
-    private int[] elements;
+    private char[] elements;
     private int top;
 
     public Stack(int size)	//Constructor
 	{
 		this.size = size;
-		this.elements = new int[size];
+		this.elements = new char[size];
 		this.top = -1;	//top initialized to negative
 	}
 
@@ -20,12 +20,12 @@ public class Stack{
         return size;
     }
 
-    public void setElements(int[] elements)
+    public void setElements(char[] elements)
     {
         this.elements = elements;
     }
 
-    public int[] getElements()
+    public char[] getElements()
     {
         return elements;
     }
@@ -40,13 +40,13 @@ public class Stack{
         return top;
     }
 
-	public void push(int i)	//Add element to stack
+	public void push(char i)	//Add element to stack
 	{
 		top++;	//Increment top element index
 		elements[top] = i;	//Add element to elements list
 	}
 
-    public int pop()	//Remove top item from stack
+    public char pop()	//Remove top item from stack
 	{
 		top--;
 		return elements[top+1];	//Return element being removed from stack
@@ -70,12 +70,13 @@ public class Stack{
     public static void main(String[] args)
     {
         Stack s = new Stack(5);
-        s.push(1);
-        s.push(2);
-        s.push(3);
-        s.push(4);
-        s.push(5);
-        if(s.pop()==5 && s.pop()==4 && s.pop()==3&& s.pop()==2 && s.pop()==1)
+        s.push('1');
+        s.push('2');
+        s.push('3');
+        s.push('4');
+        s.push('5');
+        if(s.pop()=='5' && s.pop()=='4' && s.pop()=='3' &&
+         s.pop()=='2' && s.pop()=='1')
             System.out.println("STACK TEST PASSED");
         else System.out.println("STACK TEST FAILED");
     }
